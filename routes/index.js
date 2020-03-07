@@ -8,6 +8,9 @@ router.get('/', function (req, res, next) {
 
 //PERSONA
 const persona = require("../models/persona");
-router.get("/v1/personas", persona.getPersona);
-
+router.get("/v1/personas", persona.getPersonas);
+router.get("/v1/personas/:personaId", persona.getPersona);
+router.post("/v1/personas/", persona.insertarPersona);
+router.put("/v1/personas/", persona.editarPersona);
+router.delete("/v1/personas/:personaId", persona.eliminarPersona)
 module.exports = router;
